@@ -1,5 +1,7 @@
 # Zero.chernarusredux
 [SP/COOP 12] The Days After Zero
+Steam Workshop Here
+http://steamcommunity.com/sharedfiles/filedetails/?id=1229196780
 
 Original MOD Use
 
