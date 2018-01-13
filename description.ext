@@ -1,0 +1,29 @@
+author = XFiRE ARMY;
+onLoadName = "The Days After Zero";
+loadScreen = "ravage.jpg";
+overviewPicture = "ravage.jpg";
+
+class Header 
+{
+	gameType = Survive;
+	minPlayers = 1;
+	maxPlayers = 12;
+};
+
+#include "=BTC=_q_revive\dlg.h"
+
+disabledAI = 1;
+wreckLimit = 10;
+wreckRemovalMinTime = 300;
+wreckRemovalMaxTime = 600;
+corpseLimit = 20;	
+corpseRemovalMinTime = 300;
+corpseRemovalMaxTime = 600;
+showGroupIndicator = 1;
+
+//-------------------------Respawn
+//respawn = 0;
+//respawnDelay = 10;
+respawnOnStart = 0;
+//respawnTemplates[] = {"MenuPosition"};
+
