@@ -8,7 +8,7 @@ class EditorData
 	toggles=65;
 	class ItemIDProvider
 	{
-		nextID=937;
+		nextID=940;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=142;
+		nextID=149;
 	};
 	class Camera
 	{
-		pos[]={4740.2759,404.51511,10331.622};
-		dir[]={0.29280496,-0.64386022,-0.70701373};
-		up[]={0.2463689,0.76510453,-0.59489053};
-		aside[]={-0.92396522,-1.0037766e-006,-0.38265899};
+		pos[]={4471.7192,347.91565,10807.003};
+		dir[]={-0.14842734,-0.77804518,-0.61048508};
+		up[]={-0.18381044,0.62820989,-0.75601494};
+		aside[]={-0.97172719,8.9494279e-007,0.23625883};
 	};
 };
 binarizationWanted=0;
@@ -51,6 +51,8 @@ addons[]=
 	"CUP_CAMisc",
 	"A3_Props_F_Orange_Humanitarian_Garbage",
 	"ravage",
+	"rhs_c_weapons",
+	"Shemaghs",
 	"A3_Modules_F",
 	"rhsusf_c_troops",
 	"rhsusf_c_statics",
@@ -83,7 +85,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=26;
+		items=28;
 		class Item0
 		{
 			className="A3_Structures_F_Wrecks";
@@ -179,80 +181,92 @@ class AddonsMetaData
 		};
 		class Item14
 		{
+			className="rhs_c_weapons";
+			name="AFRF Weapons Pack";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item15
+		{
+			className="Shemaghs";
+			name="Shemaghs";
+		};
+		class Item16
+		{
 			className="rhsusf_c_troops";
 			name="RHSUSF Infantry & Equipment";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item15
+		class Item17
 		{
 			className="rhsusf_c_statics";
 			name="RHSUSF Static Weapons";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item16
+		class Item18
 		{
 			className="A3_Characters_F_Orange";
 			name="Arma 3 Orange - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item17
+		class Item19
 		{
 			className="A3_Sounds_F";
 			name="Arma 3 - Sound Effects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item18
+		class Item20
 		{
 			className="A3_Characters_F_Exp";
 			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item19
+		class Item21
 		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item20
+		class Item22
 		{
 			className="A3_Structures_F_Orange";
 			name="Arma 3 Orange - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item23
 		{
 			className="A3_Supplies_F_Orange";
 			name="Arma 3 Orange - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item22
+		class Item24
 		{
 			className="A3_Air_F_Orange";
 			name="Arma 3 Orange - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item23
+		class Item25
 		{
 			className="CUP_CABuildings_Misc";
 			name="CUP_CABuildings_Misc";
 		};
-		class Item24
+		class Item26
 		{
 			className="A3_Static_F";
 			name="Arma 3 Alpha - Turrets";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item25
+		class Item27
 		{
 			className="A3_Supplies_F_Heli";
 			name="Arma 3 Helicopters - Ammoboxes and Supplies";
@@ -430,7 +444,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=119;
+		items=122;
 		class Item0
 		{
 			dataType="Object";
@@ -3057,16 +3071,38 @@ class Mission
 						init="call{this setDammage 1;}";
 						class Inventory
 						{
+							class primaryWeapon
+							{
+								name="rhs_weap_ak74m_2mag_npz";
+								muzzle="rhs_acc_dtk";
+								class primaryMuzzleMag
+								{
+									name="rhs_30Rnd_545x39_AK";
+									ammoLeft=30;
+								};
+							};
 							class uniform
 							{
 								typeName="U_B_HeliPilotCoveralls";
 								isBackpack=0;
 								class MagazineCargo
 								{
-									items=1;
+									items=3;
 									class Item0
 									{
 										name="Chemlight_green";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="rhs_30Rnd_545x39_AK";
+										count=2;
+										ammoLeft=30;
+									};
+									class Item2
+									{
+										name="rvg_franta";
 										count=1;
 										ammoLeft=1;
 									};
@@ -3087,7 +3123,7 @@ class Mission
 								isBackpack=0;
 								class MagazineCargo
 								{
-									items=4;
+									items=6;
 									class Item0
 									{
 										name="SmokeShellGreen";
@@ -3112,13 +3148,70 @@ class Mission
 										count=1;
 										ammoLeft=1;
 									};
+									class Item4
+									{
+										name="rhs_30Rnd_545x39_AK";
+										count=1;
+										ammoLeft=30;
+									};
+									class Item5
+									{
+										name="rhs_30Rnd_545x39_AK_green";
+										count=8;
+										ammoLeft=30;
+									};
+								};
+							};
+							class backpack
+							{
+								typeName="B_AssaultPack_khk";
+								isBackpack=1;
+								class MagazineCargo
+								{
+									items=6;
+									class Item0
+									{
+										name="rvg_bacon";
+										count=5;
+										ammoLeft=1;
+									};
+									class Item1
+									{
+										name="rvg_spirit";
+										count=4;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="rvg_franta";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item3
+									{
+										name="rvg_rice";
+										count=3;
+										ammoLeft=1;
+									};
+									class Item4
+									{
+										name="rvg_antiRad";
+										count=6;
+										ammoLeft=6;
+									};
+									class Item5
+									{
+										name="rvg_beans";
+										count=2;
+										ammoLeft=1;
+									};
 								};
 							};
 							map="ItemMap";
 							compass="ItemCompass";
 							watch="ItemWatch";
 							radio="ItemRadio";
-							headgear="H_CrewHelmetHeli_B";
+							goggles="Mask_M40";
 						};
 					};
 					id=650;
@@ -3371,7 +3464,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11854.003,48.133671,3970.6077};
+						position[]={11854.768,48.189983,3971.8792};
 						angles[]={0,5.8198175,0};
 					};
 					side="West";
@@ -3822,7 +3915,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4456.438,339.00143,10808.038};
+						position[]={4455.9609,339.00143,10807.621};
 						angles[]={0,0.80501568,0};
 					};
 					side="West";
@@ -3926,7 +4019,7 @@ class Mission
 				class Item1
 				{
 					dataType="Waypoint";
-					position[]={4456.438,339.5,10807.988};
+					position[]={4455.9609,339.5,10807.571};
 					type="Hold";
 					speed="LIMITED";
 					class Effects
@@ -4079,7 +4172,7 @@ class Mission
 											flags=6;
 											class Attributes
 											{
-												skill=0.60000002;
+												skill=1;
 												rank="MAJOR";
 												init="call{this allowDamage false; this setVariable [""istrader"", ""rvg_arms_s"", true]}";
 												name="Quartermaster";
@@ -8098,7 +8191,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -8136,7 +8229,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[55,60,75,20,25]";
+							value="[90,70,90,60,35]";
 						};
 					};
 				};
@@ -8174,7 +8267,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[55,60,75,20,25]";
+							value="[80,80,100,60,35]";
 						};
 					};
 				};
@@ -8212,7 +8305,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[25,55,75,20,25]";
+							value="[100,55,75,20,25]";
 						};
 					};
 				};
@@ -8525,7 +8618,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=0;
+							value=1;
 						};
 					};
 				};
@@ -8803,7 +8896,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=3;
+							value=0;
 						};
 					};
 				};
@@ -8841,7 +8934,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=0;
+							value=2;
 						};
 					};
 				};
@@ -8879,7 +8972,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=0;
+							value=1;
 						};
 					};
 				};
@@ -8908,7 +9001,7 @@ class Mission
 		class Item118
 		{
 			dataType="Trigger";
-			position[]={4427.1099,339,10779.615};
+			position[]={4439.519,339,10747.59};
 			class Attributes
 			{
 				text="zed blacklisted";
@@ -8923,6 +9016,570 @@ class Mission
 			};
 			id=936;
 			type="EmptyDetector";
+		};
+		class Item119
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11863.326,47.595367,3973.8899};
+				angles[]={6.1821976,0,6.1716499};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=937;
+			type="rhs_7ya37_1_single";
+			atlOffset=-1.9073486e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[""FirstAidKit"",""Mask_M40"",""Mask_M40_OD""],[4,6,5]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item120
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={539.96198,401.00424,11960.539};
+				angles[]={0.034662239,0,6.1193337};
+			};
+			id=938;
+			type="Ravage_ai";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="Ravage_ai_ai_huntersHost2_m";
+					expression="_this setVariable ['ai_huntersHost2_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=5;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="Ravage_ai_SpawnAI_traders_m";
+					expression="_this setVariable ['SpawnAI_traders_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=50;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="Ravage_ai_ai_condition_m";
+					expression="_this setVariable ['ai_condition_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="True";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="Ravage_ai_ai_remoteZeus_m";
+					expression="_this setVariable ['ai_remoteZeus_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="Ravage_ai_aiPopulationFactor_m";
+					expression="_this setVariable ['aiPopulationFactor_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="Ravage_ai_SpawnAI_host1_m";
+					expression="_this setVariable ['SpawnAI_host1_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="EAST";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="Ravage_ai_SpawnAI_friendly_m";
+					expression="_this setVariable ['SpawnAI_friendly_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="WEST";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="Ravage_ai_ai_distance_m";
+					expression="_this setVariable ['ai_distance_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[400, 1000]";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="Ravage_ai_SpawnAI_host2_m";
+					expression="_this setVariable ['SpawnAI_host2_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="RESISTANCE";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="Ravage_ai_ambientChat_m";
+					expression="_this setVariable ['ambientChat_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="Ravage_ai_SpawnAI_renegades_m";
+					expression="_this setVariable ['SpawnAI_renegades_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="Ravage_ai_ai_huntersHost1_m";
+					expression="_this setVariable ['ai_huntersHost1_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=15;
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="Ravage_ai_carPatrols_m";
+					expression="_this setVariable ['carPatrols_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=13;
+			};
+		};
+		class Item121
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1464.666,252.81786,11915.929};
+				angles[]={6.2751913,0,0.018675024};
+			};
+			id=939;
+			type="Ravage_zombies";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="Ravage_zombies_z_uniforms_m";
+					expression="_this setVariable ['z_uniforms_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="Ravage_zombies_type_m";
+					expression="_this setVariable ['type_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Walkers";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="Ravage_zombies_z_hit_m";
+					expression="_this setVariable ['z_hit_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="Ravage_zombies_z_init_m";
+					expression="_this setVariable ['z_init_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="Ravage_zombies_z_condition_m";
+					expression="_this setVariable ['z_condition_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="True";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="Ravage_zombies_spawnRadius_m";
+					expression="_this setVariable ['spawnRadius_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=250;
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="Ravage_zombies_safeDistance_m";
+					expression="_this setVariable ['safeDistance_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=75;
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="Ravage_zombies_numberMax_m";
+					expression="_this setVariable ['numberMax_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=10;
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="Ravage_zombies_z_FN_m";
+					expression="_this setVariable ['z_FN_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="Ravage_zombies_numberMaxGlobal_m";
+					expression="_this setVariable ['numberMaxGlobal_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=250;
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="Ravage_zombies_sunF_m";
+					expression="_this setVariable ['sunF_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="Ravage_zombies_fastNum_m";
+					expression="_this setVariable ['fastNum_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=35;
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="Ravage_zombies_z_killed_m";
+					expression="_this setVariable ['z_killed_m',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=13;
+			};
 		};
 	};
 };

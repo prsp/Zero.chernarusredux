@@ -27,3 +27,14 @@ showGroupIndicator = 1;
 respawnOnStart = 0;
 //respawnTemplates[] = {"MenuPosition"};
 
+class Params
+{
+	class lootdrop
+	{
+		title = Weapons 100% LootDrop  Scripts;
+		values[] = {0, 1};
+		texts[] = {$STR_disabled, $STR_enabled};
+		default = 0;
+		file = "params\lootdrop.sqf";
+	};
+};
